@@ -11,9 +11,9 @@ TEST(UID, UID_is_string_has_5_dots) {
   std::string uid = uidgen();
   ASSERT_EQ(std::count(uid.begin(), uid.end(), '.'),5);
 }
-TEST(UID, UID_is_string_has_5_dots) {
+TEST(UID, UID_is_string_has_less_than_5_dots) {
   std::string uid = uidgen();
-  ASSERT_EQ(std::count(uid.begin(), uid.end(), '.'),4);
+  ASSERT_TRUE(std::count(uid.begin(), uid.end(), '.') < 5);
 }
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
