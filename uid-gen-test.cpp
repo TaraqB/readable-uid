@@ -9,8 +9,7 @@ TEST(UID, UID_is_generated_within_length_limit) {
 }
 TEST(UID, UID_is_string_has_5_dots) {
   std::string uid = uidgen();
-  std::count(uid, &uid + uid.length() + n, '.')
-  ASSERT_EQ(std::count(uid, &uid + uid.length() + n, '.'),5);
+  ASSERT_EQ(std::count(uid, &uid + uid.length(), '.'),5);
 }
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
